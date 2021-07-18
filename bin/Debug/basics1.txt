@@ -1,0 +1,335 @@
+var returnTimeout = setTimeout("", 500);
+var pitTimeout = setTimeout("", 500);
+var pitI = 0;
+var pitReady = false;
+main = document.frames[0];
+s = main.petWin.fighter_1_status;
+target = targetTotal.split(" ");
+path = pathTotal.split(" ");
+pathNumber = path.length;
+pathI = 0;
+pathPre = pathPreTotal.split(" ");
+pathPreNumber = pathPre.length - 1;
+pathPreI = 0;
+skillNumber = skillCD.length;
+var skillReady = [];
+for(var i = 0; i < skillNumber; i++){
+    skillReady.push(true);
+}
+skillI = 0;
+
+function tiaozhan() {
+    var x = document.getElementsByTagName("a");
+    var y = x[13].outerHTML.split(" ")
+    var z = y[1].slice(8);
+    setTimeout(z, 1500);
+}
+        
+function startPlay() {
+    pitI = 0;
+    var timeI = 1;
+    var period = 2000;
+    setTimeout("main.cmd('use 0')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('xiuli all')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go " + city + "驿站')", timeI * period);
+    timeI++;
+    setTimeout("main.flyTo('精灵城')", timeI * period);
+    timeI++;
+    setTimeout("main.flyTo('拖把城')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('goToMaoYouGongZuoSHi')", timeI * period);
+    timeI = timeI + 3;
+    setTimeout("main.cmd('beginXinXiangJuHuaCha')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 胸风轩')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('beginXiongMaoGeDeWuNai')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 仙子树')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('secondXinXiangJuHuaCha')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 女王宫殿')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('beginNuanNuanWenHou')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 呼噜房')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('beginYiZhaoHuanWu')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 黄蜂宫')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('thirdNuanNuanWenHou')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 果果堂')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('secondYiZhaoHuanWu')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 痒痒阁')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('endXinXiangJuHuaCha')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 晶亮殿')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('secondXiongMaoGeDeWuNai')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 擎天宫')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('secondNuanNuanWenHou')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 胸风轩')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('endXiongMaoGeDeWuNai')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 女王宫殿')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('endNuanNuanWenHou')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 呼噜房')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('endYiZhaoHuanWu')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 痒痒阁')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('goToYiZhan')", timeI * period);
+    timeI = timeI + 3;
+    setTimeout("main.ranShaiZi('6');", timeI * period);
+    timeI++;
+    setTimeout("main.ranShaiZi('5');", timeI * period);
+    timeI++;
+    setTimeout("main.ranShaiZi('4');", timeI * period);
+    timeI++;
+    setTimeout("main.ranShaiZi('3');", timeI * period);
+    timeI++;
+    setTimeout("main.ranShaiZi('2');", timeI * period);
+    timeI++;
+    setTimeout("main.ranShaiZi('1');", timeI * period);
+    timeI++;
+    setTimeout("main.offOpenWin('showlilian');", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 添香楼')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('lingJingHuaShi')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 道具店')", timeI * period);
+    timeI++;
+    setTimeout("main.overTaskCmd('endDrawJinNang')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 南门')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 卡斯特平原16')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 卡斯特平原18')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('getxys')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 卡斯特平原16')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 南门')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 驿站')", timeI * period);
+    timeI++;
+    setTimeout("main.flyTo('精灵城')", timeI * period);
+    timeI++;
+    setTimeout("main.flyTo('" + city + "')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('go 装备店')", timeI * period);
+    timeI++;
+    setTimeout("main.cmd('fetchtimeprize')", timeI * period);
+    timeI++;
+    setTimeout(("main.cmd('use 60')"), timeI * period);
+    timeI++;
+    setTimeout("pre()", timeI * period);
+    timeI++;
+}
+
+
+function continuePlay() {
+    var timeI=1;
+    setTimeout("main.cmd('use 0')", timeI * 500);
+    timeI++;
+    setTimeout("main.cmd('xiuli all')", timeI * 500);
+    timeI++;
+    setTimeout("main.cmd('fetchtimeprize')", timeI * 500);
+    timeI++;
+    setTimeout(("main.cmd('use 60')"), timeI * 500);
+    timeI++;
+    setTimeout("pre()", timeI * 500);
+    time++;
+}
+
+function skill() {
+    if (parseFloat(main.hpLine_left_no.innerText) == 0){
+        clearTimeout(returnTimeout);
+        roach();
+    }else if (main.petWin.fighter_1_status == s) {
+        clearTimeout(returnTimeout);
+        if(pitReady && pitI < 20){
+            pitI++;
+            pitReady = false;
+            setTimeout("main.openJingJiChang(main.myId," + main.nowLv.innerText + ");", 1000);
+            setTimeout("pit()", 5000);
+            returnTimeout = setTimeout("main.cmd('look')", 60000);
+        }else{
+            fight();
+        }
+    }else{
+        for(var i = 0; i < skillNumber; i++){
+            if(skillReady[i] && !(skillI > 0 && skillI<20)){
+                main.useCut(i);
+                if(skillI == 0){
+                    skillI++;
+                }
+                skillReady[i] = false;
+                setTimeout("skillReady[" + i + "] = true", skillCD[i]);
+                break;
+            }
+        }
+        if(skillI < 20 && skillI > 0){
+            skillI++;
+        }
+        setTimeout("skill()", 500);
+    }
+}
+
+function pre(){
+    if (parseFloat(main.hpLine_left_no.innerText) == 0){
+        roach();
+    }else if(main.room == pathPre[pathPreNumber - 1]){
+        main.cmd("go " + pathPre[pathPreNumber]);
+        if(pitI < 20){
+            pitI++;
+            setTimeout("main.openJingJiChang(main.myId," + main.nowLv.innerText + ");", 1000);
+            setTimeout("pit()", 5000);
+            returnTimeout = setTimeout("main.cmd('look')", 60000);
+        }else{
+            setTimeout("fight()", 1000);
+        }
+    }else{
+        var pathPreLoop = 0;
+        while(main.room!=pathPre[pathPreI]){
+            pathPreI++;
+            if(pathPreI == pathPreNumber){
+                pathPreI = 0;
+                pathPreLoop++;
+                if(pathPreLoop==2){
+                    setTimeout("main.cmd('use 1')", 500);
+                    setTimeout("pre()", 10000);
+                    return;
+                }
+            }
+        }
+        pathPreI++;
+        if (pathPreI == pathPreNumber) pathPreI = 0;
+        main.cmd("go " + pathPre[pathPreI]);
+        setTimeout("pre()", 500);
+    }
+}
+
+function pit(){
+    if(main.petWin.fighter_1_status == s){
+        clearTimeout(returnTimeout);
+        setTimeout("pitReady = true;", 600000);
+        setTimeout("fight()", 500);
+    }else{
+        setTimeout("pit()", 1000);
+    }
+}
+
+function roach() {
+    var timeI=1;
+    if (parseFloat(main.hpLine_left_no.innerText) != 0){
+        setTimeout("main.cmd('go 装备店')", timeI * 500);
+        timeI++;
+        setTimeout("main.cmd('xiuli all')", timeI * 500);
+        timeI++;
+        setTimeout("main.cmd('use 0')", timeI * 500);
+        timeI++;
+        setTimeout("pre()", timeI * 500);
+        time++;
+    }else{
+        setTimeout("main.cmd('relive')", timeI * 500);
+        timeI++;
+        setTimeout("main.cmd('zhiliao ok')", timeI * 500);
+        timeI++;
+        setTimeout("roach()", timeI * 500);
+        timeI++;
+    }
+}
+
+function fight() {
+    if (parseFloat(main.hpLine_left_no.innerText) == 0){
+        roach();
+    }else if(main.petWin.fighter_1_status == s){
+        var pathLoop = 0;
+        while(main.room!=path[pathI]){
+            pathI++;
+            if(pathI==pathNumber){
+                pathI=0;
+                pathLoop++;
+                if(pathLoop==10){
+                    setTimeout("main.cmd('use 1')", 500);
+                    setTimeout("pre()", 10000);
+                    return;
+                }
+            }
+        }
+        if (parseFloat(main.hpLine_left_no.innerText) / parseFloat(main.hpLine_left_max_no.innerText) < 0.3 || parseFloat(main.mpLine_left_no.innerText) / parseFloat(main.mpLine_left_max_no.innerText) < 0.2) {
+            if (parseFloat(main.hpLine_left_no.innerText) / parseFloat(main.hpLine_left_max_no.innerText) < 0.3) setTimeout("main.cmd('use 2')", 1000);
+            if (parseFloat(main.mpLine_left_no.innerText) / parseFloat(main.mpLine_left_max_no.innerText) < 0.2) setTimeout("main.cmd('use 3')", 500);
+            setTimeout("fight()", 12000);
+        } else {
+            var gi = 0;
+            var petWin = main.document.petWin;
+            while (gi >= 0) {
+                if (gi > 30) {
+                    gi = -1;
+                    break;
+                }
+                if (!petWin.document.getElementById("npc_" + gi)) {
+                    gi++;
+                    continue;
+                }
+                var monster;
+                monster = petWin.document.getElementById("npc_" + gi);
+                if (monster.innerText.indexOf("尸体") > -1 || monster.innerText.indexOf("战斗中") > -1 || monster.innerText.indexOf("镖车") > -1) {
+                    gi++;
+                    continue;
+                }
+                var isFind = 0;
+                for (tari = 0; tari < target.length; tari++) {
+                    if (monster.innerText.indexOf(target[tari]) >= 0) {
+                        isFind = 1;
+                        break;
+                    }
+                }
+                if (isFind == 1) {
+                    break;
+                }
+                gi++;
+            }
+            if (gi >= 0) {
+                var gwinf, gwattst, gwatted, gwattstr;
+                gwinf = main.document.petWin.document.getElementById("npc_" + gi).innerHTML;
+                gwattst = gwinf.indexOf("p.cmd('");
+                gwinf = gwinf.toString().substring(gwattst, gwinf.toString().length);
+                gwatted = gwinf.indexOf("')");
+                gwattstr = gwinf.toString().substring(0, gwatted).replace("p.cmd('", "");
+                skillI = 0;
+                main.cmd(gwattstr);
+                returnTimeout = setTimeout("main.cmd('look')", 20000);
+                setTimeout("skill()", 500);
+            } else {
+                pathI++;
+                if (pathI == pathNumber) pathI = 0;
+                main.cmd('go ' + path[pathI]);
+                setTimeout("fight()", 500);
+            }
+        }
+    }else{
+        returnTimeout = setTimeout("main.cmd('look')", 20000);
+        skill();
+    }
+}

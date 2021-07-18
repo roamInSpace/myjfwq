@@ -1,0 +1,19 @@
+function jiancha() {
+    var x1 = document.getElementsByTagName("p");
+    var x2 = x1[0].innerText.split("\n")
+    var x3 = x2[6].split("£∫")
+    var x4 = x3[1].split("/");
+    if (parseFloat(x4[0]) > 1200) {
+        window.location.href="http://s96.pet.imop.com/jingjichang/jingjichangshop.jsp?grade=2";
+    } else {
+        var x = document.getElementsByTagName("a");
+        var y = x[13].outerHTML.split(" ")
+        var z = y[1].slice(8);
+        setTimeout(z, 1500);
+    }
+}
+
+function duihuan(){
+    jiFenExchageItem('…Ò√ÿ±¶ Øœ‰(Lv1)','fitems.baoshi.ShenMiBaoShiXiang','true');
+    window.location.href="http://s96.pet.imop.com/jingjichang/jingjichang.jsp";
+}
